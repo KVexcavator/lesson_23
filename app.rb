@@ -27,8 +27,9 @@ post '/visit' do
 	@name = params[ :name]
 	@pfone = params[ :pfone]
 	@data_time = params[ :data_time]
+	@color = params[ :color]
 	output=File.open "./public/visit.txt","a"
-	output.write "Master: #{@master}, Visiter: #{@name} , pfone: #{@pfone}, date & time #{@data_time}<br>"
+	output.write "Master: #{@master}, Visiter: #{@name} ,Color : #{@color} pfone: #{@pfone}, date & time #{@data_time}<br>"
 	output.close
   @message_save_visit="Уважаемый #{@name}, Ваша запись сохранена, ждём Вас #{@data_time}."
   erb :visit
